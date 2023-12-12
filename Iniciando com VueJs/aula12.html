@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Curso Vue --- forma simplificada do v-bind</title>
+    <script src="./vue.js"></script>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        .vermelho{
+            color: red;
+        }
+        .negrito{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!--simplificando o v-bind-->
+    <div id="app">
+        <a :href="site">Site</a>
+        <p :class="cor" class="negrito">Simplicando o v-bind</p>
+        <input type="text" :placeholder="instrucaoDePreenchimento">
+        <input type="checkbox" :checked="check">
+    </div>
+    
+
+    <script>
+
+
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                site:'http://google.com',
+                cor:'vermelho',
+                instrucaoDePreenchimento: 'Placeholder - Diretiva v-bind',
+                valor: 'entendo a diretiva v-bind',
+                check: true           }
+                
+                
+        })
+    </script>
+</body>
+</html>

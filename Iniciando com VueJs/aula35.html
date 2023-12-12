@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span>Paciente: </span> <input type="text" v-model="paciente">
+        <br>
+        <ul>
+            <li v-for="p in lista"> {{p.nome}}, {{p.idade}} </li>
+        </ul>
+
+    </div>
+
+
+    <script>
+
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                paciente: '',
+                pacientes: [
+                    {nome: 'Jorge Sant Ana', idade: 32},
+                    {nome: 'João Santos', idade: 45},
+                    {nome: 'José Agusto' , idade: 21},
+                    {nome: 'Júnior Silva' , idade: 20},
+                ],
+                lista: []
+            },
+            methods: {
+
+            },
+            computed:{
+
+            },
+            watch: {
+                paciente(valorNovo, valorAntigo){
+                    console.log(valorNovo, valorAntigo)
+                    this.lista = this.pacientes.filter(p => p.nome.match(valorNovo))
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

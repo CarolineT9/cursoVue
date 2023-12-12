@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="inputTexto">
+        <br>
+        <button @click = "selecionarElementoFilho()">Botão</button>
+        <br>
+        <select name="" id="opcoes">
+            <option value="A">Opcção 1</option>
+            <option value="B">Opcção 2</option>
+            <option value="C">Opcção 3</option>
+        </select>
+    </div>
+
+    <script>
+        const vm =  new Vue({
+            el:'#app', 
+            data: {
+
+            },
+            methods: {
+                selecionarElementoFilho(){
+                    console.log(opcoes.value)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

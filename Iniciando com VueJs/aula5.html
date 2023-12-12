@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+
+</head>
+<body>
+    <h1>Teste</h1>
+        
+    <div id="app">
+        {{ mensagem }} <br>
+
+      Valor total:   {{ valorTotal }} <br>
+      logado: {{logado}} <br>
+      hobbies: {{hobbies[0]}} <br>
+      perfil: {{perfil.nome}}, {{perfil.cursos[0]}}
+
+    </div>
+
+    <script>
+        
+       const vm = new Vue( // vm = ViewModule
+        {
+            el: '#app', // # para selecionar por id || . para selecionar classes
+            data: { // adiciona atributos
+                mensagem: 'Primeiro template controlado pelo Vue.', //string
+                valorTotal: 150.75, // numero,
+                logado: false, //boolean
+                hobbies: ['Games','Caminhar', 'Futebol'],
+
+                perfil:{
+                    nome: 'Macarena',
+                    site: 'macarena.com.br',
+                    idade: 20,
+                    cursos: [
+                      {
+                        nome: 'Laravel',
+                        cargaHoraria: '32 horas'
+                      },
+                      {
+                        nome: 'Banco de dados Relacionais',
+                        cargaHoraria: '20 horas'
+                      }
+
+                    ]
+
+                }
+            
+            }
+        
+        }
+       ) 
+
+       console.log(vm)
+    </script>
+</body>
+</html>

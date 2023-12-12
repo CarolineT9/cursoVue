@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-on</title>
+    <script src="./vue.js"></script>
+    <style>
+        .verde{
+            background-color: green;
+        }
+        .azul{
+            background-color: blue;
+        }
+        .vermelho{
+            background-color: red;
+        }
+        .borda{
+            border: 1px solid
+        }
+        .div-principal{
+            width: 200px;
+            height: 200px;
+        }
+        .div-comum{
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div  class="borda div-principal" :class="cor">
+            cor: {{cor}}
+        </div><hr>
+        <div @click="mudarCor('verde')" class="borda div-comum"></div>
+        <div class="borda div-comum" @mouseover="mudarCor('azul')" @mouseout = "mudarCor('vermelho')"></div>
+        
+        
+    </div>
+
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data:{
+                cor: ''
+            },
+            methods:{
+                mudarCor(c){
+                    this.cor = c
+
+                },
+              
+            }
+        })
+    </script>
+</body>
+</html>

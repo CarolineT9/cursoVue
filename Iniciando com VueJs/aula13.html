@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressões no data binding</title>
+    <script src="./vue.js"></script>
+    <style>
+        .azul{
+            background-color: blue;
+        }
+        .verde{
+            background-color: green;
+        }
+        .cinza{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{mensagem}}<br>
+        <input :class="estilo" type="text"> <br>
+        <input type="text" :class="1 == 1 ? 'verde' : estilo ">
+    </div>
+
+    <script>
+
+        const vm = new Vue(
+            {
+            el: '#app',
+            data: {
+                mensagem: 'Expressão',
+                estilo: 'cinza',
+
+            }
+            }
+
+        )
+            
+        
+    </script>
+</body>
+</html>

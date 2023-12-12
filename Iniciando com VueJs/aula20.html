@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-Js</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if -->
+
+        <button @click="exibirSaldo = !exibirSaldo">
+            <span v-if="!exibirSaldo">Exibir saldo</span>
+            <span v-if="exibirSaldo">Ocultar Saldo</span>  
+        </button>
+        <p>Saldo: <span v-if="exibirSaldo">R$ {{saldo}} </span></p>
+        <hr>
+
+        <!-- v-if e v-else -->
+        idade: <input type="text" id="inputIdade" @blur="SetIdade()">
+        <p v-if = "idade < 18">Menor de idade</p>
+        <p v-else>Maior de idade</p>
+
+    </div>    
+    
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+                saldo: 7458.12,
+                exibirSaldo: false,
+                idade: 0
+            },
+            methods: {
+                setIdade(){
+                    this.idade = inputIdade.value
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva {V-on}</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keyup="imprimirTexto()"> <!--v-on === @-->
+        <button v-on:click="mensagemAlerta()">Botão</button>
+    </div>
+    <script>
+        
+        const vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+
+                imprimirTexto(){
+                    console.log('Teste')
+                },
+                mensagemAlerta(){
+                    alert('Mensagem de Alerta')
+                }
+
+            }
+
+        })
+    </script>
+</body>
+</html>

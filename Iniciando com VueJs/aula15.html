@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-on - capturando os dados do event</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <p>Capturar dados do evento</p>
+        <div>
+            <input type="text" >
+            <button @click="mensagemAlerta($event)">Clique</button>
+        </div>
+
+    </div>
+    <script>
+
+        const vm = new Vue({
+            el: '#app',
+            data:{
+                xyz:true
+            },
+            methods:{
+                mensagemAlerta(evento){
+                    console.log(evento)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

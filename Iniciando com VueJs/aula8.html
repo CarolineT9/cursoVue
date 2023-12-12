@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Vue</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{somar()}} <br>
+        {{subtrair()}}<br>
+        {{multiplicar()}}<br>
+        {{dividir()}}<br>
+      
+    </div>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                n1: 10,
+                n2: 5
+
+            },
+            methods:{
+                somar: function somar(){ // sintaxe convencional
+                    return this.n1 + this.n2 
+                },
+                subtrair: function(){ // função anonima
+                    return this.n2 - this.n1
+                },
+                multiplicar: () => {
+                    return this.n1 * this.n2 // arrow function // não são indicadas para criação de métodos
+                                                // por não fazer referencia ao constexto do objeto
+                }, 
+                dividir(){ //forma mais elegante de definir os pares/valor
+                    return this.n1 / this.n2
+                },
+              
+            }
+
+        })
+    </script>
+</body>
+</html>

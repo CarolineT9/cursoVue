@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-on --- modificadores</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <a href="https://globo.com" target="_blank" v-on:click.prevent="prevenirComportamentoPadrao()">Link</a>
+        <br>
+        Mensagem: {{ msg }}
+        <hr>
+        <button @click.once="executarUmaVez">
+            botão
+        </button>
+        <p>cliques: {{ cliques }} </p>
+
+        <hr>
+        <form @submit.prevent.once="prevenirUmaVez()" action="">
+            <button type="submit">Enviar</button>
+        </form>
+        <p>
+            formulario: {{formulario}}
+        </p>
+    
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el:"#app",
+            data: {
+                msg: '',
+                cliques: 0,
+                formulario:'',
+            },
+            methods: {
+                prevenirComportamentoPadrao(){
+                    this.msg = 'Comportamento padrão ativado'
+                },
+                executarUmaVez(){
+                    this.cliques++
+                },
+                prevenirUmaVez(){
+                    this.formulario = 'Prevenindo o comportamento padrão do formulário...'
+                }
+            }
+
+
+        })
+    </script>
+</body>
+</html>

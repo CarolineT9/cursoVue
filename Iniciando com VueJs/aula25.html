@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue- -diretiva v-for</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!-- v-for ** Implementando laços de repetições:-->
+    <div id="app">
+        <ul>
+            <li v-for="(curso, chave) in cursos">{{chave}} - {{curso}}</li>
+        </ul>
+    </div>
+
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+                cursos: ['Laravel', 'PHP', 'Banco de Dados', 'Vue', 'Solid']
+            },
+            methods:{}
+        })
+    </script>
+</body>
+</html>
